@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+service StreamImage {
+	rpc imageStreaming (stream imgReq) returns (imgResponse);
+}
+
+message imgReq {
+	int32 number = 1;
+	string image_data = 2;
+}
+
+message imgResponse {
+	string response = 1;
+}
+
